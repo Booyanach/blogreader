@@ -4,6 +4,12 @@
     flex-direction: row;
     justify-content: flex-start;
     padding: 0.5em;
+    border-bottom: 1px solid #DADADA;
+    cursor: pointer;
+}
+
+:host:last-of-type {
+    border-bottom: none;
 }
 
 :host > .favorite {
@@ -11,6 +17,5 @@
     right: 0;
     bottom: 0;
     padding: 0.5em;
-    cursor: pointer;
     position: absolute;
 }

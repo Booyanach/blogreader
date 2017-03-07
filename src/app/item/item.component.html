@@ -1,4 +1,4 @@
-{{item.title}}
-<a class="favorite">
-  <i class="fa" (click)="setFavorite()" [ngClass]="{'fa-heart': item.favorite, 'fa-heart-o': !item.favorite}"></i>
+{{item.title | ellipsis: 18}}
+<a class="favorite" (click)="setFavorite($event)">
+  <i class="fa" [ngClass]="{'fa-heart': item.favorite, 'fa-heart-o': !item.favorite}"></i>
 </a>

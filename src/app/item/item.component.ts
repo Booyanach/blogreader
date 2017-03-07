@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+
 import { Item } from '../common/item';
 
 @Component({
@@ -15,4 +16,8 @@ export class ItemComponent implements OnInit {
   ngOnInit() {
   }
 
+  setFavorite($event) {
+    $event.stopPropagation();
+    this.item.favorite = !this.item.favorite;
+  }
 }
