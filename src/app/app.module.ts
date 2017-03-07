@@ -7,13 +7,15 @@ import { AppComponent } from './app.component';
 import { ListComponent } from './list/list.component';
 import { ItemComponent } from './item/item.component';
 import { PostComponent } from './post/post.component';
+import { EllipsisPipe } from './common/ellipsis.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     ListComponent,
     ItemComponent,
-    PostComponent
+    PostComponent,
+    EllipsisPipe
   ],
   imports: [
     BrowserModule,
