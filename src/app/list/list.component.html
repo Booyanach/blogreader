@@ -1,1 +1,1 @@
-<app-item *ngFor="let item of items" [item]="item"></app-item>
+<app-item *ngFor="let item of items" [item]="item" (click)="selectPost($event, item)"></app-item>

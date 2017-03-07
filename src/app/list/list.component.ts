@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Item } from '../common/item';
+import { StateService } from '../common/state.service';
 
 @Component({
   selector: 'app-list',
@@ -10,11 +11,20 @@ export class ListComponent implements OnInit {
 
   items: Item[];
 
-  constructor() {
-    this.items = [{id: 1, userid: 1, title: 'Hello', body: 'world'}];
+  constructor(private stateService: StateService) {
+  }
+
+  getItems() {
+    this.stateService.getState().then(state => this.items = state);
   }
 
   ngOnInit() {
+    this.getItems();
+  }
+
+  selectPost($event, item) {
+    $event.stopPropagation();
+    this.stateService.selectItem(item);
   }
 
 }
