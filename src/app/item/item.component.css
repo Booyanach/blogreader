@@ -1,0 +1,16 @@
+:host {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    padding: 0.5em;
+}
+
+:host > .favorite {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    padding: 0.5em;
+    cursor: pointer;
+    position: absolute;
+}

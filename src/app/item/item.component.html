@@ -1,3 +1,4 @@
-<p>
-  item works!
-</p>
+{{item.title}}
+<a class="favorite">
+  <i class="fa" (click)="setFavorite()" [ngClass]="{'fa-heart': item.favorite, 'fa-heart-o': !item.favorite}"></i>
+</a>
