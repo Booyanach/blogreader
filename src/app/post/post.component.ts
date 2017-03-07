@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
+import { Item } from '../common/item';
+import { StateService } from '../common/state.service';
+
 @Component({
   selector: 'app-post',
   templateUrl: './post.component.html',
@@ -7,9 +10,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PostComponent implements OnInit {
 
-  constructor() { }
+  item: Item;
+
+  constructor(private stateService: StateService) {
+  }
+
+  getSelectedPost() {
+    this.stateService.getSelectedItem().subscribe(item => this.item = item, this.errorHandler);
+  }
 
   ngOnInit() {
+    this.getSelectedPost();
+  }
+
+  errorHandler(e: any): Promise<any> {
+    console.error('postComponent', e);
+    return Promise.reject(e.message || e);
   }
 
 }

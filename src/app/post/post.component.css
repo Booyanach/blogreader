@@ -1,0 +1,12 @@
+:host {
+    width: 70%;
+    padding: 1em;
+}
+
+:host > h2 {
+    margin-bottom: 1.5em;
+}
+
+:host > p {
+    font-size: 14px;
+}
