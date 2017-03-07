@@ -8,5 +8,4 @@ import { StateService } from './common/state.service';
   providers: [StateService]
 })
 export class AppComponent {
-  title = 'app works!';
 }
