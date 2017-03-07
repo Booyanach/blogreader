@@ -1,0 +1,13 @@
+:host {
+    width: 65%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+content {
+    display: flex;
+    flex-direction: row;
+    margin-top: 1em;
+    border: 1px solid #DADADA;
+}
