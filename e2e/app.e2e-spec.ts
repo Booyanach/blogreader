@@ -7,8 +7,8 @@ describe('blogreader App', function() {
     page = new BlogreaderPage();
   });
 
-  it('should display message saying app works', () => {
+  it('should display message saying "Blog Post Reader"', () => {
     page.navigateTo();
-    expect(page.getParagraphText()).toEqual('app works!');
+    expect(page.getParagraphText()).toEqual('Blog Post Reader');
   });
 });
