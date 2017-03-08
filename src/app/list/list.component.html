@@ -1,1 +1,5 @@
-<app-item *ngFor="let item of items" [item]="item" (click)="selectPost($event, item)"></app-item>
+<app-item *ngFor="let item of items" 
+            [item]="item" 
+            (click)="selectPost($event, item)" 
+            [ngClass]="{'selected': selectedItem?.id === item.id}">
+</app-item>

@@ -8,6 +8,10 @@
     cursor: pointer;
 }
 
+:host.selected {
+    background-color: #EAEAEA;
+}
+
 :host:last-of-type {
     border-bottom: none;
 }

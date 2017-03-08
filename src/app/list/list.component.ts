@@ -9,9 +9,11 @@ import { StateService } from '../common/state.service';
 })
 export class ListComponent implements OnInit {
 
+  selectedItem: Item;
   items: Item[];
 
   constructor(private stateService: StateService) {
+    this.stateService.getSelectedItem().subscribe(item => this.selectedItem = item);
   }
 
   getItems() {

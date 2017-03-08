@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, EventEmitter } from '@angular/core';
 import { Http } from '@angular/http';
 
 import { Observable } from 'rxjs/Observable';
@@ -11,13 +11,13 @@ import { Item } from './item';
 @Injectable()
 export class StateService {
 
-  selectedItem: Observable<Item>;
-  observer: Observer<Item>;
+   public selectedItem: EventEmitter<Item>;
+
   state: Item[];
   url: String = 'http://jsonplaceholder.typicode.com/posts';
 
   constructor(private http: Http) {
-    this.selectedItem = <Observable<Item>> new Observable(observer => this.observer = observer);
+    this.selectedItem = new EventEmitter();
   }
 
   getState(): Promise<Item[]> {
@@ -25,7 +25,7 @@ export class StateService {
       this.url,
       response => {
         this.state = response.json() as Item[];
-        this.observer.next(this.state[0]);
+        this.selectedItem.next(this.state[0]);
         return this.state;
       }
     ));
@@ -36,7 +36,7 @@ export class StateService {
   }
 
   selectItem(item: Item) {
-    this.observer.next(item);
+    this.selectedItem.next(item);
   }
 
   private callApi(url: String, success: any): Promise<any> {

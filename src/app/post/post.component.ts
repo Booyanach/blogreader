@@ -23,9 +23,8 @@ export class PostComponent implements OnInit {
     this.getSelectedPost();
   }
 
-  errorHandler(e: any): Promise<any> {
+  errorHandler(e: any): void {
     console.error('postComponent', e);
-    return Promise.reject(e.message || e);
   }
 
 }
