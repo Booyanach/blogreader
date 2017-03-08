@@ -2,6 +2,8 @@
 
 This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.28.3.
 
+To install it, run `npm install` in the root folder of the application.
+
 ## Development server
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
@@ -26,6 +28,9 @@ Before running the tests make sure you are serving the app via `ng serve`.
 
 Run `ng github-pages:deploy` to deploy to GitHub Pages.
 
-## Further help
+## Decisions
 
-To get more help on the `angular-cli` use `ng help` or go check out the [Angular-CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+* Initially I had decided to use an `Observable` with a paired `Observer` object on the `StateService`.
+* This set me back quite a bit until I noticed that `EventEmitter` was in fact a `Subscriber` (ie, observable and observer) which finally helped me get the unit tests running.
+
+* I wanted to store the data in session or via cookies but due to the setback with the `EventEmitter` issues I had to drop this idea.
